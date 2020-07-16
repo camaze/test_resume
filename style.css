@@ -17,6 +17,10 @@ a {
 
 .top-Nav-Bar {
     padding: 18px 13px 18px 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .top-Nav-Bar>nav {
@@ -65,4 +69,10 @@ a {
 
 .top-Nav-Bar .logo .card {
     color: #9A9DA2
+}
+
+.banner {
+    height: 516px;
+    background-image: url(./img/back.jpg);
+    border: 1px solid red
 }
