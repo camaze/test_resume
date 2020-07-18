@@ -1,11 +1,13 @@
 body {
-    background: black;
-    color: white;
+    background: rgb(239, 239, 239);
+    /*字体颜色*/
+    /* color: white; */
     margin: 0;
 }
 
 a {
     color: inherit;
+    /*没有下划线装饰*/
     text-decoration: none;
 }
 
@@ -16,31 +18,35 @@ a {
 }
 
 .top-Nav-Bar {
-    padding: 18px 13px 18px 13px;
+    padding: 18px 0px 18px 0px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.top-Nav-Bar>nav {
+.topNavBar-son {
+    padding: 0px 13px 0px 13px;
+}
+
+.top-Nav-Bar nav {
     padding-top: 4px;
     padding-bottom: 3px;
 }
 
-.top-Nav-Bar>nav>ul {
+.top-Nav-Bar nav>ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.top-Nav-Bar>nav>ul>li {
+.top-Nav-Bar nav>ul>li {
     float: left;
     margin-left: 23px;
     margin-right: 23px;
 }
 
-.top-Nav-Bar>nav>ul>li>a {
+.top-Nav-Bar nav>ul>li>a {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.7);
     font-weight: bold;
@@ -51,7 +57,7 @@ a {
     display: block;
 }
 
-.top-Nav-Bar>nav>ul>li>a:hover {
+.top-Nav-Bar nav>ul>li>a:hover {
     border-bottom: 3px solid rgb(232, 103, 107);
 }
 
@@ -74,5 +80,30 @@ a {
 .banner {
     height: 516px;
     background-image: url(./img/back.jpg);
-    border: 1px solid red
+    background-position: center center;
+    background-size: cover;
+    /* border: 1px solid red */
+}
+
+.banner .mask {
+    height: 516px;
+    background-color: rgba(44, 51, 64, 0.8);
+}
+
+.userCard {
+    border: 1px solid red;
+    max-width: 931px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+.userCard .greeting {
+    display: inline-block;
+    background: #E8676B;
+    color: white;
+    width: 70px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
 }
