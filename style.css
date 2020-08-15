@@ -11,6 +11,31 @@ a {
     text-decoration: none;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid rgb(222, 222, 222);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
 .clearfix::after {
     content: "";
     display: block;
@@ -91,19 +116,280 @@ a {
 }
 
 .userCard {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     max-width: 931px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.45);
 }
 
 .userCard .greeting {
     display: inline-block;
     background: #E8676B;
     color: white;
-    width: 70px;
+    padding: 4px 15px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    /*用padding及lh两行代替以下四行*/
+    /* width: 70px;
     height: 29px;
     line-height: 29px;
+    text-align: center; */
+}
+
+.userCard .greeting .triangle {
+    display: block;
+    border: 7px solid transparent;
+    width: 0;
+    height: 0;
+    border-left-color: #E8676B;
+    border-top-width: 0px;
+    position: absolute;
+    left: 3px;
+    top: 100%;
+}
+
+.userCard .picture {
+    float: left;
+}
+
+.userCard .text {
+    float: left;
+    margin-left: 64px;
+    width: 440px;
+}
+
+.userCard .text h1 {
+    margin-top: 19px;
+}
+
+.userCard .text p {
+    margin-top: 8px;
+}
+
+.userCard .text hr {
+    margin: 23px 0;
+}
+
+.userCard .pictureAndText {
+    padding: 50px 60px;
+}
+
+.userCard dl dt,
+.userCard dl dd {
+    float: left;
+    padding: 6px 0;
+}
+
+.userCard dl dt {
+    width: 30%;
+    /* font-weight: bold; */
+}
+
+.userCard dl dd {
+    width: 70%;
+    color: #9da0a7;
+}
+
+.userCard>footer.media {
+    background: #E8676B;
     text-align: center;
+}
+
+.userCard>footer.media>a {
+    /* border: 1px solid black; */
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    padding: 5px 0;
+    line-height: 30px;
+    margin: 12px;
+}
+
+.userCard>footer.media>a:hover {
+    background: rgb(208, 92, 96);
+}
+
+.userCard svg {
+    width: 30px;
+    height: 30px;
+    fill: white !important;
+    vertical-align: top;
+}
+
+body>main {
+    margin-top: -345px;
+    /* border: 1px solid red; */
+}
+
+body>main .downloadResume-wrapper {
+    text-align: center;
+}
+
+body>main .downloadResume {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border: 1px solid rgb(203, 205, 207);
+    background: rgb(239, 239, 239);
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 34px;
+    transition: box-shadow 0.3s;
+}
+
+body>main .downloadResume:hover {
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.selfIntroduction {
+    max-width: 931px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: KaiTi;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+section.skills,
+.portfolio {
+    max-width: 931px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+section.skills>h2 {
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+}
+
+section.skills h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+    color: #3d4451;
+}
+
+section.skills>ol {
+    background: white;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.45);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+}
+
+section.skills>ol>li {
+    /* border: 1px solid red; */
+    float: left;
+    width: 47%;
+}
+
+section.skills>ol>li:nth-child(even) {
+    float: right;
+}
+
+
+
+section.skills .progressBar {
+    height: 5px;
+    background: #FAE1E1;
+    border-radius: 2px;
+    margin: 5px 0 36px 0;
+}
+
+section.skills .progressBar .progress {
+    height: 100%;
+    background: #E8676B;
+    width: 70%;
+    border-radius: 2px;
+}
+
+section.portfolio>h2 {
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 作品集 */
+section.portfolio {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+section.portfolio>nav {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 34px;
+}
+
+section.portfolio>nav>ol {
+    /* border: 1px solid red; */
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.portfolio>nav>ol>li {
+    float: left;
+    margin-left: 40px;
+    /* 鼠标移上去变小手 */
+    cursor: pointer;
+}
+
+section.portfolio>nav>ol>li:nth-child(1) {
+    margin-left: 0;
+}
+
+section.portfolio>nav>.bar {
+    /* border: 1px solid red; */
+    height: 5px;
+    background: white;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 2px;
+}
+
+section.portfolio>nav .bar-inner {
+    height: 100%;
+    /* width: 70%; */
+    /*状态机切换不固定宽度*/
+    background: rgb(232, 103, 107);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+section.portfolio>nav .bar.state-1 .bar-inner {
+    margin-left: 0;
+    width: 32px;
+}
+
+section.portfolio>nav .bar.state-2 .bar-inner {
+    margin-left: 72px;
+    width: 34px;
+}
+
+section.portfolio>nav .bar.state-3 .bar-inner {
+    margin-left: 144px;
+    width: 99px;
+}
+
+section.portfolio .works {
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+section.portfolio .works>.big,
+section.portfolio .works>.small {
+    position: absolute;
 }
