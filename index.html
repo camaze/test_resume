@@ -4,6 +4,7 @@
 <head>
     <title>陈俊年的个人简历</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_1963795_l3f6u74kcdp.js">
 
     </script>
@@ -15,10 +16,35 @@
             fill: currentColor;
             overflow: hidden;
         }
+
+        /* 加载动画部分 */
+        .site-welcome {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* 加载动画部分 */
+        .site-welcome.active {
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
+    <div id=siteWelcome class="site-welcome active">
+        <div class="loading">
+
+        </div>
+    </div>
     <!-- <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-tuite"></use>
     </svg> -->
@@ -208,6 +234,10 @@
             </div>
         </div>
     </section>
+    <script>
+        // 全部东西加载完成， 加载动画失效
+        siteWelcome.classList.remove('active')
+    </script>
 </body>
 
 </html>
