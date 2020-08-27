@@ -88,18 +88,32 @@
     <!-- <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-tuite"></use>
     </svg> -->
-    <div class="top-Nav-Bar">
+    <div id='topNavBar' class="top-Nav-Bar">
         <div class="topNavBar-son clearfix">
             <a href="#" class="logo" alt="logo" style="float: left;">
                 <span class="rs">RS</span><span class="card">card</span>
             </a>
             <!-- <img src="#" alt="logo"> -->
-            <nav style="float: right;">
+            <nav class='menu' style="float: right;">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
+                    <li><a href="#siteAbout">关于</a></li>
+                    <li><a href="#siteSkills">技能</a></li>
+                    <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="subMenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="subMenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
                     <li><a href="#">日历</a></li>
                     <li><a href="#">联系方式</a></li>
                     <li><a href="#">其他</a></li>
@@ -113,7 +127,7 @@
     </div>
 
     <main>
-        <div class="userCard">
+        <div id='siteAbout' class="userCard">
             <div class="pictureAndText clearfix">
                 <div class='picture'>
                     <img src="./img/momogu.png" width=300px height=300px alt="头像">
@@ -168,7 +182,7 @@
         </p>
     </main>
 
-    <section class="skills">
+    <section id='siteSkills' class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -234,7 +248,7 @@
         </ol>
     </section>
 
-    <section class="portfolio">
+    <section id='siteWorks' class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -279,6 +293,43 @@
         setTimeout(function () {
             siteWelcome.classList.remove('active')
         }, 2000)
+        window.onscroll = function (xxx) {
+            if (window.scrollY > 0) {
+                topNavBar.classList.add('sticky')
+            } else {
+                topNavBar.classList.remove('sticky')
+            }
+        }
+        // let liTags = document.getElementsByClassName('menuTrigger')
+        // 下面这行获取所有满足的li
+        let liTags = document.querySelectorAll('nav.menu > ul >li')
+        for (let i = 0; i < liTags.length; i++) {
+            // 鼠标进入就反应
+            liTags[i].onmouseenter = function (x) {
+                let li = x.currentTarget
+                li.classList.add('active')
+                // let brother = li.getElementsByTagName('ul')[0]
+                // brother.classList.add('active')
+
+                // let brother = a.nextSibling
+                // 害怕取到文本节点
+                // while (brother.tagName !== 'UL') {
+                //     brother = brother.nextSibling
+                // }
+
+            }
+            liTags[i].onmouseleave = function (x) {
+                let li = x.currentTarget
+                li.classList.remove('active')
+                // let brother = li.getElementsByTagName('ul')[0]
+
+                // brother.classList.remove('active')
+                // 害怕取到文本节点
+                // while (brother.tagName !== 'UL') {
+                //     brother = brother.nextSibling
+                // }
+            }
+        }
     </script>
 </body>
 

@@ -44,10 +44,21 @@ h6 {
 
 .top-Nav-Bar {
     padding: 18px 0px 18px 0px;
+    /* 字体颜色继承这个 */
+    color: rgba(255, 255, 255, 0.7);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.4s;
+}
+
+.top-Nav-Bar.sticky {
+    background: white;
+    padding: 10px 0;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+    color: #3d4451;
 }
 
 .topNavBar-son {
@@ -69,22 +80,91 @@ h6 {
     float: left;
     margin-left: 23px;
     margin-right: 23px;
+    position: relative;
 }
 
 .top-Nav-Bar nav>ul>li>a {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
+    /* color: rgba(255, 255, 255, 0.7); */
+    color: inherit;
     font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     padding-top: 5px;
     padding-bottom: 5px;
     display: block;
+
+    position: relative;
 }
 
+/****************************************** 以下是主要特效代码 *********************************************/
+
+/* 
 .top-Nav-Bar nav>ul>li>a:hover {
     border-bottom: 3px solid rgb(232, 103, 107);
+} */
+
+.top-Nav-Bar nav>ul>li.active>a::after {
+    display: block;
+    content: '';
+    position: absolute;
+    /* border-bottom: 10px solid blue; */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(232, 103, 107);
+    /* border-bottom: 300px solid transparent; */
+    height: 3px;
+    animation: menuSlide 0.25s;
 }
+
+/* 红条 */
+@keyframes menuSlide {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.top-Nav-Bar .subMenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    /* top: 100%; */
+    background: white;
+    color: #3d4451;
+}
+
+/* 作品、博客菜单出现动画 */
+@keyframes submenuSlide {
+    from {
+        /* transform: translateX(-50%); */
+        margin-right: 100%;
+    }
+
+    to {
+        /* transform: translateX(0); */
+        margin-right: 0%;
+    }
+}
+
+.top-Nav-Bar li.active>.subMenu {
+    display: block;
+    animation: submenuSlide 0.3s;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.top-Nav-Bar .subMenu>li {
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+
+/****************************************以上是一些主要特效代码*****************************************/
 
 .top-Nav-Bar .logo {
     font-size: 25px;
