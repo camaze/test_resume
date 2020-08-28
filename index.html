@@ -338,6 +338,14 @@
                 let href = a.getAttribute('href') // '#siteAbout'
                 let element = document.querySelector(href)
                 let top = element.offsetTop
+
+                // 点击关于等的动画效果到指定页面
+                let n = 25 // 一共动25次
+                let duration = 500 / n // 多少时间动一次  ， 要求0.5秒到达指定位置
+                let currentTop = window.scrollTop
+                setInterval(() => {
+                    window.scrollTo(0, top - 68)
+                }, duration)
                 window.scrollTo(0, top - 68)
             }
         }
