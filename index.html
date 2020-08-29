@@ -288,6 +288,7 @@
             </div>
         </div>
     </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.0/tween.umd.js'></script>
     <script>
         // 全部东西加载完成， 加载动画失效
         setTimeout(function () {
@@ -303,6 +304,14 @@
         // let liTags = document.getElementsByClassName('menuTrigger')
         // 下面这行获取所有满足的li
         let liTags = document.querySelectorAll('nav.menu > ul >li')
+
+        // Setup the animation loop. 缓入动画，点击关于之类慢慢移动过去
+        function animate(time) {
+            requestAnimationFrame(animate)
+            TWEEN.update(time)
+        }
+        requestAnimationFrame(animate)
+
         for (let i = 0; i < liTags.length; i++) {
             // 鼠标进入就反应
             liTags[i].onmouseenter = function (x) {
@@ -341,12 +350,21 @@
 
                 // 点击关于等的动画效果到指定页面
                 let n = 25 // 一共动25次
-                let duration = 500 / n // 多少时间动一次  ， 要求0.5秒到达指定位置
-                let currentTop = window.scrollTop
-                setInterval(() => {
-                    window.scrollTo(0, top - 68)
+                let duration = 500 / n // 多少时间动一次  ， 要求0.5秒（500毫秒）到达指定位置
+                let currentTop = window.scrollY
+                let targetTop = top - 68
+                let perDistance = (targetTop - currentTop) / n
+                let i = 0
+                let id = setInterval(() => {
+                    if (i == n) {
+                        window.clearInterval(id) // 咋砸了闹钟
+                        return
+                    }
+                    i++
+                    window.scrollTo(0, currentTop + perDistance * i)
                 }, duration)
                 window.scrollTo(0, top - 68)
+
             }
         }
     </script>
