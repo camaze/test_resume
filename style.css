@@ -104,7 +104,8 @@ h6 {
     border-bottom: 3px solid rgb(232, 103, 107);
 } */
 
-.top-Nav-Bar nav>ul>li.active>a::after {
+.top-Nav-Bar nav>ul>li.active>a::after,
+.top-Nav-Bar nav>ul>li.highlight>a::after {
     display: block;
     content: '';
     position: absolute;
@@ -163,6 +164,21 @@ h6 {
     white-space: nowrap;
     padding: 5px 10px;
 }
+
+[data-x].active {
+    outline: 10px solid red;
+}
+
+[data-x].offset {
+    transform: translateY(100px);
+}
+
+[data-x] {
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+
 
 /****************************************以上是一些主要特效代码*****************************************/
 
@@ -384,6 +400,8 @@ section.skills .progressBar {
     background: #FAE1E1;
     border-radius: 2px;
     margin: 5px 0 36px 0;
+    /* 溢出隐藏  动态效果用 */
+    overflow: hidden;
 }
 
 section.skills .progressBar .progress {
@@ -391,6 +409,12 @@ section.skills .progressBar .progress {
     background: #E8676B;
     width: 70%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+section.skills.offset .progress {
+    transform: translateX(-100%);
 }
 
 section.portfolio>h2 {
