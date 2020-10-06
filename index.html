@@ -214,40 +214,32 @@
 
         <!-- 下面这个div只供展示所有作品，另外的框架作品、原生js点击时待做 -->
         <!-- 变成轮播，用现成的 -->
-        <!-- <style>
-            .swiper-container {
-                width: 600px;
-                height: 450px;
-            }
-
-            .swiper-slide {
-                background: white;
-            }
-        </style> -->
-
-
         <!-- 下面用的是Swiper -->
 
-        <!-- button拿外面了，不然overflow hidden -->
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
         <!-- Slider main container -->
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
+        <!-- 这就是view，用户看的见的东西 -->
+        <div id="mySlides">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
 
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src='img/easyTo.jpg' class="swiper-slide">
-                <img src='img/canvas.jpg' class="swiper-slide">
-                <!-- <img class="swiper-slide">Slide 3 -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src='img/easyTo.jpg' class="swiper-slide">
+                    <img src='img/canvas.jpg' class="swiper-slide">
+                    <!-- <img class="swiper-slide">Slide 3 -->
+                </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+
             </div>
+            <!-- button拿外面了，不然overflow hidden -->
 
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
 
 
@@ -271,6 +263,7 @@
     <script src="./js/auto-slide-up.js"></script>
     <script src="./js/topbar-add-sticky.js"></script>
     <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/nav-mouse-enter.js"></script>
 
     <script>
         // 全部东西加载完成， 加载动画失效  加载动画保证有t秒
