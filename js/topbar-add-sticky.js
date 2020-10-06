@@ -9,7 +9,7 @@
             // this.bindEvents.call(this)
         },
         bindEvents: function () {
-            var view = this.view
+            // var view = this.view
             if (window.scrollY > 0) { // 初始状态就不在页面最上面
                 setTimeout(function () {
                     this.active()

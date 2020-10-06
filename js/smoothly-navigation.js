@@ -4,6 +4,11 @@
     var controller = {
         view: null,
         aTags: null,
+        init: function (view) {
+            this.view = view
+            this.initAnimation()
+            this.bindEvents()
+        },
         initAnimation: function () { // Setup the animation loop. 缓入动画，点击关于之类慢慢移动过去
             function animate(time) {
                 requestAnimationFrame(animate)
@@ -64,13 +69,8 @@
                     this.scrollToElement(element)
                 }
             }
-        },
-        init: function (view) {
-            this.view = view
-            this.initAnimation()
-            this.bindEvents()
-
         }
+
     }
     controller.init(view)
 }.call()
