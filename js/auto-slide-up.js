@@ -1,4 +1,5 @@
 ! function () {
+    // console.log('here2', window.scrollY)
     if (window.scrollY === 0) { //只有在最上面刷新才会动，或第一次打开才动
         //找到特殊标签，每个添加offset类，滑到的时候动一下，注意第一个要一开始就动一下。
         var specialTags = document.querySelectorAll('[data-x]')
@@ -9,12 +10,13 @@
         //找到离用户最近的，移除offset
         setTimeout(function () {
             findClosestAndRemoveOffset()
-        }, 1500)
+        }, 1000)
+
+        // 滚动鼠标时出现的情况，再找到最近的，移除offset
+        window.addEventListener('scroll', function (x) {
+            findClosestAndRemoveOffset()
+        })
     }
-    // 滚动鼠标时出现的情况，再找到最近的，移除offset
-    window.addEventListener('scroll', function (x) {
-        findClosestAndRemoveOffset()
-    })
 
 
 

@@ -10,8 +10,10 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
 
-    <script src="//at.alicdn.com/t/font_1963795_l3f6u74kcdp.js">
-    </script>
+    <script src="//at.alicdn.com/t/font_1963795_l3f6u74kcdp.js"></script>
+    <!-- 留言板 下面两行必须放这里，不然scrollX为0，猜测从外部数据库拿数据必须放head标签 -->
+    <script src="//cdn1.lncld.net/static/js/3.5.0/av-min.js"></script>
+    <script src="./js/data-import.js"></script>
 
 </head>
 
@@ -274,7 +276,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.0/tween.umd.js'></script>
     <script src='./node_modules/swiper/swiper-bundle.min.js'></script>
     <!-- <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script> -->
-    <script src="//cdn1.lncld.net/static/js/3.5.0/av-min.js"></script>
+
+
     <!-- 模块化 -->
 
     <script src="./js/init-swiper.js"> </script>
@@ -282,14 +285,16 @@
     <script src="./js/topbar-add-sticky.js"></script>
     <script src="./js/smoothly-navigation.js"></script>
     <script src="./js/nav-mouse-enter.js"></script>
-
-    <script src="./js/message.js"></script>
+    <!-- 留言提交 -->
+    <script src="./js/message-submit.js"></script>
 
     <script>
         // 全部东西加载完成， 加载动画失效  加载动画保证有t秒
         setTimeout(function () {
             siteWelcome.classList.remove('active')
         }, 1000)
+
+        // console.log('here1', window.scrollY)
 
 
 
