@@ -430,13 +430,15 @@ section.skills,
     margin-top: 60px;
 }
 
-section.skills>h2 {
+section.skills>h2,
+section.message>h2 {
     color: #3d4451;
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
     text-align: center;
 }
+
 
 section.skills h3 {
     font-size: 14px;
@@ -609,4 +611,22 @@ section.portfolio .swiper-button-prev::after {
 
 section.portfolio .swiper-button-next::after {
     font-size: 25px;
+}
+
+section.message>h2 {
+    padding-bottom: 40px;
+    /* margin: 10px; */
+}
+
+section.message>ol {
+    /* margin-top: 20px; */
+    max-width: 680px;
+    border-top: 1px solid #ddd;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+}
+
+section.message>ol>li {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
 }
