@@ -1,6 +1,6 @@
 // 鼠标进入导航的li（关于等时），会有小红条，而且在作品那里有显示作品1-3
 ! function () {
-    let view = document.querySelectorAll('nav.menu > ul >li')
+    let view = View('nav.menu > ul >li')
     var controller = {
         view: null,
         init: function () {

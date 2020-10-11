@@ -1,6 +1,6 @@
 // 点一下a标签，平滑滚到那里。
 ! function () {
-    var view = document.querySelector('nav.menu')
+    var view = View('nav.menu')
     var controller = {
         view: null,
         aTags: null,
